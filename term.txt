@@ -1,0 +1,1 @@
+QR terminal herhangi bir kullanıcı verisi toplamaz veya paylaşmaz, kullanıcılar kendi güvenliklerinden sorumludur.
