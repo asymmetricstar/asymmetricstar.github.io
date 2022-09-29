@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>QR Terminal Demo Rest-Api Template</title>
+    <meta name="description" content="Prism is a beautiful Bootstrap 4 template for open-source landing pages."/>
+
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css?family=K2D:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Bootstrap CSS / Color Scheme -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+
+<!--Header Section-->
+<section class="bg-gradient pt-5 pb-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex flex-row align-items-center justify-content-between">
+                <div class="heading-brand">QR Terminal</div>
+                <a href="https://" class="btn btn-dark" target="_blank">Download Android App</a>
+            </div>
+        </div>
+        <div class="row mt-6">
+            <div class="col-md-8 mx-auto text-center">
+                <h1>Node.js örnek http uygulaması</h1>
+                <p class="lead mb-5">QR Terminal android uygulaması için açık kaynak demo rest-api uygulamasını kurulum talimatlarını izleyerek kendi bilgisayarınızda çalıştırabilirsiniz.</p>
+                <a href="https://github.com/asymmetricstar/asymmetricstar.github.io" class="btn btn-success svg-icon">
+                    <em class="mr-2" data-feather="github"></em>
+                    Contribute
+                </a>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-9 mx-auto">
+                <div class="code-window">
+                    <div class="dots">
+                        <div class="red"></div>
+                        <div class="orange"></div>
+                        <div class="green"></div>
+                    </div>
+
+
+<pre class="language-javascript line-numbers">
+<code class="language-javascript">
+/* Klasör oluşturma ve Npm paketlerinin kurulumu */
+$mkdir .rest-demo
+$cd ./rest-demo
+$npm install express --save
+$npm install body-parser --save
+</code>
+
+</code>
+<code class="language-javascript">
+/* main.js */
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+const router = express.Router();
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: true }));
+        router.post("/qr", (request, response) => {
+            console.log(request.body);
+            response.send({ "Status": "Success", "Type": "POST", "Date": Date.now() });
+        });               
+    app.use("/", router);
+    app.listen(3000, () => console.log("Demo Rest-api server is started.."));
+</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
